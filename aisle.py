@@ -4,7 +4,6 @@ import math
 
 def aisle_count(aisleName):
     #aisleTotal = 0
-    final = []
     while True:
         
         input_total = input("How many cases are on the aisle?: ").strip()
