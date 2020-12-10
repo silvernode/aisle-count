@@ -13,8 +13,6 @@ def aisle_count(aisleName):
         else:
             print(input_total)
             return input_total
-        #if math.isnan(input_total):
-           # print("Please enter a number")
         
         
     
