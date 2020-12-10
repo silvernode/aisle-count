@@ -7,7 +7,7 @@ def aisle_count(aisleName):
     final = []
     while True:
         
-        input_total = input("How many cases are on the aisle?: ")
+        input_total = input("How many cases are on the aisle?: ").strip()
 
         if input_total == "".join:
             print("No input given")
