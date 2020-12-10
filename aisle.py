@@ -11,7 +11,6 @@ def aisle_count(aisleName):
         if input_total == "":
             print("No input given")
         else:
-            print(input_total)
             return input_total
         
         
