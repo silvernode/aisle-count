@@ -11,13 +11,13 @@ def aisle_count(aisleName):
         try:
             val = int(input_total)
             #print("Input is an integer number.")
-            print("Input number is: ", val)
+            #print("Input number is: ", val)
             return val
         except ValueError:
             try:
                 float(input_total)
                 #print("Input is an float number.")
-                print("Input number is: ", val)
+                #print("Input number is: ", val)
                 return val
             except ValueError:
                 print("This is not a number. Please enter a valid number")
