@@ -91,7 +91,6 @@ def count_all():
 while True:
     print()
     print("1) Start Count")
-    print("2) Change Count")
     print()
     choice = input("Choose option: ")
 
