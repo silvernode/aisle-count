@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import math, string
+import math, string, time
 
 
 def aisle_count(aisleName):
@@ -45,7 +45,8 @@ def change_count():
         print("Not a option")
         
 def count_all():
-    file = open('asile-count-12-12-2020.txt', 'w+')
+    timestr = time.strftime("%Y%m%d-%H%M%S")
+    file = open(f'aisle-count-{timestr}.txt', 'w+')
 
     a17 = aisle_count("17")
     file.write(f"17 = {a17}\n")
@@ -95,7 +96,10 @@ while True:
     choice = input("Choose option: ")
 
     if choice == "1":
-        print("Total cases: ", count_all())
+        totalCases = count_all()
+        print("Total cases: ", totalCases)
+        
+
     elif choice == "2":
         change_count()
     elif choice == "q":
