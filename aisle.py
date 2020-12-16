@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 import math, string, time
 
+keepGoing = True
 
 def aisle_count(aisleName):
     #invalidChars = set(string.punctuation.replace("_", ""))
-    while True:
+    while keepGoing == True:
         
         input_total = input(f"How many cases are on the aisle {aisleName}?: ")
         
@@ -89,7 +90,7 @@ def count_all():
 
 
 
-while True:
+while keepGoing == True:
     print()
     print("1) Start Count")
     print()
@@ -103,6 +104,6 @@ while True:
     elif choice == "2":
         change_count()
     elif choice == "q":
-        quit()
+        keepGoing = False
     else:
         print(f"{choice} is not an option")
