@@ -3,25 +3,33 @@ import math, string, time
 
 keepGoing = True
 
-def aisle_count(aisleName):
-    #invalidChars = set(string.punctuation.replace("_", ""))
-    while keepGoing == True:
-        
-        input_total = input(f"How many cases are on the aisle {aisleName}?: ")
-        
-        try:
-            val = int(input_total)
-            #print("Input is an integer number.")
-            #print("Input number is: ", val)
-            return val
-        except ValueError:
+
+class aisle:
+    def __init__(self, name, cases):
+        self.name = name
+        self.cases = cases
+
+    
+
+    def count(self):
+        #invalidChars = set(string.punctuation.replace("_", ""))
+        while keepGoing == True:
+            
+            input_total = input(f"How many cases are on the aisle {self.name}?: ")
+            
             try:
-                float(input_total)
-                #print("Input is an float number.")
+                self.cases = int(input_total)
+                #print("Input is an integer number.")
                 #print("Input number is: ", val)
-                return val
+                return self.cases
             except ValueError:
-                print("This is not a number. Please enter a valid number")
+                try:
+                    float(input_total)
+                    #print("Input is an float number.")
+                    #print("Input number is: ", val)
+                    return self.cases
+                except ValueError:
+                    print("This is not a number. Please enter a valid number")
 
         #if input_total == "": 
         #    print("No input given")
@@ -32,56 +40,57 @@ def aisle_count(aisleName):
         #else:
             #input_total = float(input_total)
         #    return input_total
-def change_count():
-    print("=-=-=-=- Aisles -=-=-=-=-=")
-    print("1) Aisle 17")
-    print("2) Aisle 16")
-    change_aisle = input("What aisle do you want to change?: ")
 
-    if change_aisle == "1":
-        aisle_count("17")
-    elif change_aisle == "2":
-        aisle_count("16")
-    else:
-        print("Not a option")
-        
+a17 = aisle("17", 0)
+a16 = aisle("16", 0)
+a15 = aisle("15", 0)
+a14 = aisle("14", 0)
+a13 = aisle("13", 0)
+a12 = aisle("12", 0)
+a9 = aisle("9", 0)
+a8 = aisle("8", 0)
+a7 = aisle("7", 0)
+a6 = aisle("6", 0)
+
 def count_all():
+    
     timestr = time.strftime("%Y%m%d-%H%M%S")
     file = open(f'aisle-count-{timestr}.txt', 'w+')
 
-    a17 = aisle_count("17")
-    file.write(f"17 = {a17}\n")
+    
+    a17.cases = a17.count()
+    file.write(f"17 = {a17.cases}\n")
 
-    a16 = aisle_count("16")
-    file.write(f"16 = {a16}\n")
+    a16.cases = a16.count()
+    file.write(f"16 = {a16.cases}\n")
 
-    a15 = aisle_count("15")
-    file.write(f"15 = {a15}\n")
+    a15.cases = a15.count()
+    file.write(f"15 = {a15.cases}\n")
 
-    a14 = aisle_count("14")
-    file.write(f"14 = {a14}\n")
+    a14.cases = a14.count()
+    file.write(f"14 = {a14.cases}\n")
 
-    a13 = aisle_count("13")
-    file.write(f"13 = {a13}\n")
+    a13.cases = a13.count()
+    file.write(f"13 = {a13.cases}\n")
 
-    a12 = aisle_count("12")
-    file.write(f"12 = {a12}\n")
+    a12.cases = a12.count()
+    file.write(f"12 = {a12.cases}\n")
 
-    a9 = aisle_count("9")
-    file.write(f"9 = {a9}\n")
+    a9.cases = a9.count()
+    file.write(f"9 = {a9.cases}\n")
 
-    a8 = aisle_count("8")
-    file.write(f"8 = {a8}\n")
+    a8.cases = a8.count()
+    file.write(f"8 = {a8.cases}\n")
 
-    a7 = aisle_count("7")
-    file.write(f"7 = {a7}\n")
+    a7.cases = a7.count()
+    file.write(f"7 = {a7.cases}\n")
 
-    a6 = aisle_count("6")
-    file.write(f"6 = {a6}\n")
+    a6.cases = a6.count()
+    file.write(f"6 = {a6.cases}\n")
 
     
 
-    loadTotal = a17 + a16 + a15 + a14 + a13 + a12 + a9 + a8 + a7 + a6
+    loadTotal = a17.cases + a16.cases + a15.cases + a14.cases + a13.cases + a12.cases + a9.cases + a8.cases + a7.cases + a6.cases
     file.write(f"Total = {loadTotal}\n")
 
     file.close()
@@ -100,9 +109,6 @@ while keepGoing == True:
         totalCases = count_all()
         print("Total cases: ", totalCases)
         
-
-    elif choice == "2":
-        change_count()
     elif choice == "q":
         keepGoing = False
     else:
