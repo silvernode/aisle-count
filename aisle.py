@@ -55,7 +55,8 @@ a6 = aisle("6", 0)
 def count_all():
     
     timestr = time.strftime("%Y%m%d-%H%M%S")
-    file = open(f'aisle-count-{timestr}.txt', 'w+')
+    fileName = f"aisle-count-{timestr}.txt"
+    file = open(fileName, 'w+')
 
     
     a17.cases = a17.count()
