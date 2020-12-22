@@ -107,7 +107,7 @@ def div_ppl():
 
 while keepGoing == True:
     print()
-    print("1) Start check_number")
+    print("1) Start count")
     print()
     choice = input("Choose option: ")
 
