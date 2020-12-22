@@ -18,7 +18,7 @@ def check_number(message):
         enter_number = input(message)
 
         try:
-            cases = int(enter_number)
+            cases = float(enter_number)
             #print("Input is an integer number.")
             #print("Input number is: ", val)
             return cases
@@ -62,7 +62,7 @@ def count_all():
     a17.cases = check_number("Total cases for aisle 17: ")
     file.write(f"17 = {a17.cases}\n")
 
-    a16.cases = check_number(f"Total cases for aisle 16: ")
+    a16.cases = check_number("Total cases for aisle 16: ")
     file.write(f"16 = {a16.cases}\n")
 
     a15.cases = check_number("Total cases for aisle 15:")
@@ -94,6 +94,11 @@ def count_all():
     loadTotal = a17.cases + a16.cases + a15.cases + a14.cases + a13.cases + a12.cases + a9.cases + a8.cases + a7.cases + a6.cases
     file.write(f"Total = {loadTotal}\n")
 
+    per_person = check_number("How many people are working?: ")
+    per_person = loadTotal / per_person
+
+    file.write(f"Cases per person: {per_person}")
+
     file.close()
 
     return loadTotal
@@ -114,8 +119,8 @@ while keepGoing == True:
     if choice == "1":
         totalCases = count_all()
         print("Total cases: ", totalCases)
-        pplDiv = div_ppl() / totalCases
-        print(pplDiv)
+        pplDiv = totalCases / div_ppl()
+        print(f"{pplDiv} cases per person")
         
     elif choice == "q":
         keepGoing = False
